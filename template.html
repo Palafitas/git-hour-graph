@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+
+<canvas id="resumido" style="width:100%;max-width:600px"></canvas>
+<br>
+<canvas id="completo" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var data_atual = new Date().toLocaleDateString();
+var resumido = ["00:00 -> 08:00", "09:00 -> 18:00", "19:00 -> 23:00"];
+var resumido_valores = [resumido08, resumido918, resumido1923];
+var resumido_cores = ["red", "green", "red"];
+
+new Chart("resumido", {
+  type: "bar",
+  data: {
+    labels: resumido,
+    datasets: [{
+      backgroundColor: resumido_cores,
+      data: resumido_valores
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Histórico Resumido commits AUTOR_COMMIT, Período: DATA_FILTRO_INICIO -> DATA_FILTRO_FIM"
+    }
+  }
+});
+
+var completo = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"];
+var completo_valores = [completo00, completo01, completo02, completo03, completo04, completo05, completo06, completo07, completo08, completo09, completo10, completo11, completo12, completo13, completo14, completo15, completo16, completo17, completo18, completo19, completo20, completo21, completo22, completo23];
+var completo_cores = ["red", "red", "red", "red", "red", "red", "red", "red", "blue", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "blue", "red", "red", "red", "red"];
+
+new Chart("completo", {
+  type: "bar",
+  data: {
+    labels: completo,
+    datasets: [{
+      backgroundColor: completo_cores,
+      data: completo_valores
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Histórico Completo commits AUTOR_COMMIT, Período: DATA_FILTRO_INICIO -> DATA_FILTRO_FIM"
+    }
+  }
+});
+</script>
+
+</body>
+</html>
