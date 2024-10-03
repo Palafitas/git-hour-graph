@@ -2,7 +2,6 @@
 Esse projeto cria um relatório dos horários que você faz commits em seus repositórios git utilizando chart.js e exporta os hashs, autor, commits para arquivos separados por projeto (se +1).
 
 +++ Uso +++
-
 chmod +x horas.sh
 ./horas.sh ~/pasta/dos/projetos/ou/projeto 'nome.autor' '2024-04-26'
 
